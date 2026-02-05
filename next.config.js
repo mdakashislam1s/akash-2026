@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.akash.io',
+        hostname: 'quiz.mdakash.me',
       },
     ],
   },
