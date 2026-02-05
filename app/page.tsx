@@ -1,243 +1,272 @@
-import { Navigation } from '@/components/system/Navigation';
-import { Button } from '@/components/system/Button';
-import { Card } from '@/components/system/Card';
-import { PerformanceMeter } from '@/components/sections/PerformanceMeter';
-import { InteractiveCode } from '@/components/sections/InteractiveCode';
+import Navigation from '@/components/Navigation'
+import Button from '@/components/Button'
+import Card from '@/components/Card'
 
 export default function Home() {
   return (
     <>
       <Navigation />
       
-      {/* SECTION 1: HERO - The Proposition */}
-      <section id="home" className="min-h-screen flex items-center">
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen flex items-center pt-16">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-6">
               <span className="inline-block px-3 py-1 text-sm font-medium text-accent-600 bg-accent-50 rounded-full">
-                2026 Edition
+                Portfolio 2026
               </span>
             </div>
             
-            <h1 className="mb-6">
-              Building the
-              <span className="block text-accent-600">Web Infrastructure</span>
-              of Tomorrow
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
+              Hi, I'm <span className="text-accent-600">Md. Akash</span>
+              <span className="block text-gray-900 mt-2">Web Developer & SEO Specialist</span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8">
-              I architect high-performance web experiences that balance 
-              technical excellence with strategic SEO. For startups and 
-              enterprises building the future.
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              I build high-performance websites and optimize them for search engines.
+              Specializing in modern web technologies, Core Web Vitals, and
+              conversion-focused SEO strategies.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="primary" size="lg">
-                View Recent Work
+                View My Work
               </Button>
               <Button variant="tertiary" size="lg">
-                Read Technical Insights →
+                Contact Me →
               </Button>
             </div>
             
             <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-medium text-gray-900">+217%</div>
-                <div className="text-sm text-gray-500">Core Web Vitals</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-medium text-gray-900">0.9s</div>
-                <div className="text-sm text-gray-500">Avg. LCP</div>
-              </div>
-              <div className="text-center">
                 <div className="text-3xl font-medium text-gray-900">100/100</div>
-                <div className="text-sm text-gray-500">SEO Scores</div>
+                <div className="text-sm text-gray-500">Lighthouse</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-medium text-gray-900">+85%</div>
+                <div className="text-sm text-gray-500">SEO Traffic</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-medium text-gray-900">0.8s</div>
+                <div className="text-sm text-gray-500">Avg. LCP</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: THE PROOF - Interactive Demo */}
+      {/* Work Section */}
       <section id="work" className="py-20 bg-gray-50">
         <div className="container">
-          <div className="grid-asymmetric gap-13">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div>
-              <h2 className="mb-4">Technical Proof</h2>
+              <h2 className="text-3xl font-medium mb-4">Recent Work</h2>
               <p className="text-gray-600">
-                Real performance metrics from production systems. 
-                Each project includes detailed technical documentation 
-                and SEO impact analysis.
+                Real projects with measurable results. Each case study includes
+                technical details and performance metrics.
               </p>
             </div>
             
-            <div>
-              <InteractiveCode />
-              
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="lg:col-span-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card
                   title="E-commerce Platform"
-                  description="Next.js 15 + Headless CMS with sub-100ms API responses"
+                  description="Next.js migration with 98+ Lighthouse scores"
                   metrics={[
-                    { label: 'LCP', value: '0.8s' },
-                    { label: 'Conversions', value: '+34%' }
+                    { label: 'Performance', value: '98' },
+                    { label: 'Traffic', value: '+156%' }
                   ]}
                   interactive
                 />
                 
                 <Card
-                  title="AI Research Portal"
-                  description="Real-time data visualization with WebGL rendering"
+                  title="News Portal SEO"
+                  description="Technical SEO audit and implementation"
                   metrics={[
-                    { label: 'FPS', value: '60+' },
-                    { label: 'Data Points', value: '10M+' }
+                    { label: 'Organic', value: '+85%' },
+                    { label: 'Rankings', value: 'Top 3' }
+                  ]}
+                  interactive
+                />
+                
+                <Card
+                  title="SaaS Dashboard"
+                  description="React dashboard with real-time analytics"
+                  metrics={[
+                    { label: 'Load Time', value: '0.9s' },
+                    { label: 'Users', value: '10K+' }
+                  ]}
+                  interactive
+                />
+                
+                <Card
+                  title="Blog Network"
+                  description="Content strategy and technical optimization"
+                  metrics={[
+                    { label: 'Articles', value: '500+' },
+                    { label: 'Authority', value: 'DR 65+' }
                   ]}
                   interactive
                 />
               </div>
             </div>
-            
-            <div className="hidden lg:block">
-              <PerformanceMeter />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: PATTERNS - Integration Architecture */}
-      <section id="insights" className="py-20">
+      {/* Services Section */}
+      <section id="services" className="py-20">
         <div className="container">
-          <div className="mb-13">
-            <h2 className="text-center mb-4">System Patterns</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto">
-              Repeatable solutions for common challenges in modern web development.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-medium mb-4">Services</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Comprehensive web development and SEO solutions for modern businesses
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <PatternCard
-              title="Progressive Hydration"
-              description="Critical components load instantly, non-critical hydrate on interaction"
-              icon="⚡"
-              patternId="hydration"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ServiceCard
+              title="Web Development"
+              description="High-performance websites using Next.js, React, and modern frameworks"
+              features={['Next.js Development', 'React Applications', 'Performance Optimization', 'Responsive Design']}
             />
             
-            <PatternCard
-              title="SEO-First Routing"
-              description="Dynamic routes with pre-generated metadata for search engines"
-              icon="🔍"
-              patternId="routing"
+            <ServiceCard
+              title="SEO Optimization"
+              description="Technical SEO, content strategy, and performance monitoring"
+              features={['Technical SEO Audit', 'On-Page Optimization', 'Content Strategy', 'Rank Tracking']}
             />
             
-            <PatternCard
-              title="Edge Caching Strategy"
-              description="Multi-layer caching with stale-while-revalidate patterns"
-              icon="📦"
-              patternId="caching"
+            <ServiceCard
+              title="Web Performance"
+              description="Core Web Vitals optimization and speed improvements"
+              features={['Lighthouse Optimization', 'Image Optimization', 'Caching Strategy', 'CDN Setup']}
             />
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: PATHWAY - Clear Next Steps */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
-        <div className="container max-w-2xl mx-auto text-center">
-          <h2 className="mb-4">Start Building</h2>
-          <p className="text-gray-600 mb-8">
-            Let's discuss your next project. I provide technical audits, 
-            architecture planning, and full-stack implementation.
-          </p>
+        <div className="container max-w-2xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-medium mb-4">Let's Work Together</h2>
+            <p className="text-gray-600">
+              Have a project in mind? Let's discuss how we can build something amazing.
+            </p>
+          </div>
           
-          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div className="text-center">
-                <div className="text-2xl font-medium text-gray-900">48h</div>
-                <div className="text-sm text-gray-500">Technical Audit</div>
+          <div className="bg-white border border-gray-200 rounded-xl p-8">
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                    placeholder="John Doe"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                    placeholder="john@example.com"
+                  />
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-medium text-gray-900">2-4w</div>
-                <div className="text-sm text-gray-500">Prototype Build</div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Project Type
+                </label>
+                <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent">
+                  <option value="">Select a project type</option>
+                  <option value="web-dev">Web Development</option>
+                  <option value="seo">SEO Optimization</option>
+                  <option value="performance">Performance Audit</option>
+                  <option value="full">Full Package</option>
+                </select>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-medium text-gray-900">∞</div>
-                <div className="text-sm text-gray-500">Ongoing Optimization</div>
-              </div>
-            </div>
-            
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-500"
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Project Details
+                </label>
+                <textarea
+                  rows={4}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                  placeholder="Tell me about your project, timeline, and goals..."
                 />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-500"
-                />
               </div>
-              <textarea
-                placeholder="Project details, timeline, and goals..."
-                rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-500"
-              />
-              <Button variant="primary" fullWidth>
-                Send Project Brief
+              
+              <Button variant="primary" size="lg" fullWidth>
+                Send Message
               </Button>
             </form>
           </div>
-          
-          <div className="text-sm text-gray-500">
-            Currently available for 2 new projects in Q1 2026
-          </div>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="py-8 border-t border-gray-200">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <div className="text-lg font-medium text-gray-900">
-                AKASH<span className="text-accent-600">.</span>IO
+                Md.<span className="text-accent-600">Akash</span>
               </div>
               <div className="text-sm text-gray-500">
-                Web Development & SEO Architecture • 2026
+                Web Developer & SEO Specialist • 2026
               </div>
             </div>
             
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-gray-900">
+              <a href="https://github.com" className="text-gray-500 hover:text-gray-900 transition-colors">
                 GitHub
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900">
-                Twitter
-              </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900">
+              <a href="https://linkedin.com" className="text-gray-500 hover:text-gray-900 transition-colors">
                 LinkedIn
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900">
+              <a href="https://twitter.com" className="text-gray-500 hover:text-gray-900 transition-colors">
+                Twitter
+              </a>
+              <a href="mailto:akash@mdakash.me" className="text-gray-500 hover:text-gray-900 transition-colors">
                 Email
               </a>
             </div>
           </div>
+          
+          <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+            <p>© {new Date().getFullYear()} Md. Akash. All rights reserved.</p>
+            <p className="mt-2">Built with Next.js, Tailwind CSS, and deployed on Vercel.</p>
+          </div>
         </div>
       </footer>
     </>
-  );
+  )
 }
 
-// Helper Components
-const PatternCard = ({ title, description, icon, patternId }) => (
-  <div className="border border-gray-200 bg-white p-6 hover:border-accent-300 transition-colors group">
-    <div className="text-3xl mb-4">{icon}</div>
-    <h3 className="text-xl font-medium mb-2">{title}</h3>
+// Service Card Component
+const ServiceCard = ({ title, description, features }: { title: string, description: string, features: string[] }) => (
+  <div className="border border-gray-200 bg-white p-6 rounded-lg hover:border-accent-300 transition-colors">
+    <h3 className="text-xl font-medium mb-3">{title}</h3>
     <p className="text-gray-600 mb-4">{description}</p>
-    <button className="text-sm text-accent-600 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-      View implementation
-      <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
+    <ul className="space-y-2">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center text-gray-700">
+          <svg className="w-4 h-4 mr-2 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+          {feature}
+        </li>
+      ))}
+    </ul>
   </div>
-);
+)
