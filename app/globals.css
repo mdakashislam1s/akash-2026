@@ -1,54 +1,14 @@
-/* DESIGN TOKENS - CSS Variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  /* Gray Scale (perceptually uniform) */
-  --gray-0: #ffffff;
-  --gray-50: #f8f9fa;
-  --gray-100: #f1f3f5;
-  --gray-200: #e9ecef;
-  --gray-300: #dee2e6;
-  --gray-400: #ced4da;
-  --gray-500: #adb5bd;
-  --gray-600: #868e96;
-  --gray-700: #495057;
-  --gray-800: #343a40;
-  --gray-900: #212529;
-  --gray-1000: #000000;
-
-  /* Accent (Single Color System) */
-  --accent-50: #f0f9ff;
-  --accent-100: #e0f2fe;
-  --accent-200: #bae6fd;
-  --accent-300: #7dd3fc;
-  --accent-400: #38bdf8;
-  --accent-500: #0ea5e9;  /* Primary Accent */
-  --accent-600: #0284c7;
-  --accent-700: #0369a1;
-  --accent-800: #075985;
-  --accent-900: #0c4a6e;
-
-  /* Semantic Colors */
-  --success: #00c48c;
-  --warning: #ffa100;
-  --error: #ff4757;
-
-  /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Spacing Scale (Fibonacci) */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 1rem;
-  --space-5: 2rem;
-  --space-8: 5rem;
-  --space-13: 8rem;
-
-  /* Motion */
-  --transition-base: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* PERFORMANCE-FIRST BASE STYLES */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -56,67 +16,37 @@
 }
 
 html {
-  font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 5rem;
 }
 
 body {
   font-family: var(--font-sans);
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--gray-900);
-  background: var(--gray-0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
-/* TYPOGRAPHY SYSTEM */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-
-h1 { font-size: 3.815rem; }  /* Scale: 1.333 */
-h2 { font-size: 2.863rem; }
-h3 { font-size: 2.148rem; }
-h4 { font-size: 1.611rem; }
-h5 { font-size: 1.209rem; }
-
-p, li {
-  max-width: 65ch;
-  margin-bottom: var(--space-3);
-}
-
-code, pre {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-}
-
-/* UTILITY CLASSES */
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-3);
+  padding: 0 1rem;
 }
 
-.grid-asymmetric {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@media (min-width: 768px) {
-  .grid-asymmetric {
-    grid-template-columns: 1fr 2fr;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-@media (min-width: 1024px) {
-  .grid-asymmetric {
-    grid-template-columns: 1fr 2fr 1fr;
-  }
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
