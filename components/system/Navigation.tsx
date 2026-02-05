@@ -1,57 +1,40 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Button from './Button'
 
-export const Navigation: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+const Navigation: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'work', 'insights', 'contact'];
-      const current = sections.find(section => {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
+      setIsScrolled(window.scrollY > 20)
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'Work', href: '#work' },
-    { label: 'Insights', href: '#insights' },
-    { label: 'System', href: '/system' },
+    { label: 'Services', href: '#services' },
     { label: 'Contact', href: '#contact' },
-  ];
+  ]
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 py-3' : 'bg-transparent py-5'
-      }`}
-      style={{
-        transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)'
-      }}
-    >
+    <nav className={`
+      fixed top-0 left-0 right-0 z-50 transition-all duration-200
+      ${isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 py-3' : 'bg-transparent py-5'}
+    `}>
       <div className="container flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <Link 
             href="/" 
             className="text-lg font-medium text-gray-900 hover:text-accent-600 transition-colors"
           >
-            AKASH<span className="text-accent-600">.</span>IO
+            Md.<span className="text-accent-600">Akash</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
@@ -59,11 +42,7 @@ export const Navigation: React.FC = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`text-sm transition-colors ${
-                  activeSection === item.label.toLowerCase()
-                    ? 'text-accent-600 font-medium'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
               >
                 {item.label}
               </a>
@@ -84,5 +63,7 @@ export const Navigation: React.FC = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
+
+export default Navigation
